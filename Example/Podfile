@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '10.0'
+
+target 'PContributionsView_Example' do
+  pod 'PContributionsView', :path => '../'
+
+  target 'PContributionsView_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
