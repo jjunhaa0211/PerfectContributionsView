@@ -1,0 +1,16 @@
+PODS:
+  - PContributionsView (0.1.0)
+
+DEPENDENCIES:
+  - PContributionsView (from `../`)
+
+EXTERNAL SOURCES:
+  PContributionsView:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  PContributionsView: b78426da52c248ad614abab905e34a8a3946f36e
+
+PODFILE CHECKSUM: c80db511827f16ae351094593c0025b8fce3aea0
+
+COCOAPODS: 1.11.3
