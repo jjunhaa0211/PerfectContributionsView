@@ -41,7 +41,7 @@ class ViewController: UIViewController {
         
         // Code
         contributionView.data = dataSquare
-        contributionView.colorScheme = "Halloween"
+        contributionView.colorScheme = "Violet"
         view.addSubview(contributionView)
         contributionView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 212).isActive = true
         contributionView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 16).isActive = true
