@@ -1,0 +1,6 @@
+framework module PContributionsView {
+  umbrella header "PContributionsView-umbrella.h"
+
+  export *
+  module * { export * }
+}
