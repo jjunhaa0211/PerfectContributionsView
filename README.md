@@ -1,3 +1,5 @@
+
+![로고](file:///Users/junha/Desktop/logoimage.png)
 # PContributionsView
 
 [![CI Status](https://img.shields.io/travis/102890390/PContributionsView.svg?style=flat)](https://travis-ci.org/102890390/PContributionsView)
