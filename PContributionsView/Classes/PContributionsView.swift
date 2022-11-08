@@ -3,10 +3,10 @@ import UIKit
 @available(iOS 13.0, *)
 
 open class PContributionsView: UIView {
-    @IBInspectable public var colorScheme: String = "Default"
-    @IBInspectable public var gridMargin: Float = 20
-    @IBInspectable public var gridSpacing: Float = 2
-    public var data: [[Int]] = [[]]
+    open var colorList: String = "Default"
+    open var Margin: Float = 20
+    open var Spacing: Float = 2
+    open var contrilbutionsData: [[Int]] = [[]]
     
     // Init for IB
     public required init?(coder aDecoder: NSCoder) {
@@ -23,12 +23,13 @@ open class PContributionsView: UIView {
     // #3
     convenience init(frame: CGRect, data: [[Int]]) {
         self.init(frame: frame)
-        self.data = data
+        self.contrilbutionsData = data
         setupView()
     }
     
     private func setupView() {
-        self.backgroundColor = .white
+//        self.backgroundColor = .white /////////////////////
+        listBackground(.white)
         
         // Disable if AutoLayout is used
         self.translatesAutoresizingMaskIntoConstraints = false
@@ -40,7 +41,11 @@ open class PContributionsView: UIView {
         #else
         accessibilityTraits = UIAccessibilityTraitUpdatesFrequently
         #endif
-        accessibilityLabel = "ContributionView"
+        accessibilityLabel = "PContributionsView"
+    }
+    
+    public func listBackground(_ backgroundColor: UIColor) {
+        self.backgroundColor = backgroundColor
     }
     
     // MARK: Setter
@@ -49,56 +54,64 @@ open class PContributionsView: UIView {
         
         let intendedIndex = coordinates
         
-        if (intendedIndex.y >= 0 && data.count > Int(intendedIndex.y)) {
-            let subData = data[Int(intendedIndex.y)]
+        if (intendedIndex.y >= 0 && contrilbutionsData.count > Int(intendedIndex.y)) {
+            let subData = contrilbutionsData[Int(intendedIndex.y)]
             if (intendedIndex.x >= 0 && subData.count > Int(intendedIndex.x)) {
-                self.data[Int(intendedIndex.y)][Int(intendedIndex.x)] = level
+                self.contrilbutionsData[Int(intendedIndex.y)][Int(intendedIndex.x)] = level
             } else {
-                print("Out of Range")
+                print("📐 Out of Range")
             }
         } else {
-            print("Out of Range")
+            print("📐 Out of Range")
         }
+    }
+    
+    public func cellCornerRadius(_ cornerRadius: Int ) {
+        
     }
     
     // MARK: Drawing Functions
     
     override open func draw(_ rect: CGRect) {
-        createGrid(with: data)
+        createGrid(with: contrilbutionsData)
     }
     
     private func createGrid(with data: [[Int]]) {
         
         let rectHeightCount = data.count
         let rectWidthCount = data.max(by: { $0.count < $1.count })!.count
-        
+
         let width: Float = Float(self.bounds.width)
         let height: Float = Float(self.bounds.height)
         
         var rectWidth: Float = 10 // Default Value
         
         if rectWidthCount > 0 {
-            // Based on UIView Width
-            let rectWidthVal = (width - (gridMargin * 2) - (gridSpacing * Float(rectWidthCount - 1))) / Float(rectWidthCount)
-            // Based on UIView Height
-            let rectHeightVal = (height - (gridMargin * 2) - (gridSpacing * Float(rectHeightCount - 1))) / Float(rectHeightCount)
-            
-            // Scale based on width or height
+
+            let rectWidthVal = (width - (Margin * 2) - (Spacing * Float(rectWidthCount - 1))) / Float(rectWidthCount)
+
+            let rectHeightVal = (height - (Margin * 2) - (Spacing * Float(rectHeightCount - 1))) / Float(rectHeightCount)
+
             if rectWidthVal > rectHeightVal {
                 rectWidth = rectHeightVal
             } else {
                 rectWidth = rectWidthVal
             }
         }
+//
         
         var yCoord: Float = 0
         for i in data {
             var xCoord: Float = 0
             for x in i {
-                drawRect(x: CGPoint(x: CGFloat(xCoord + gridMargin), y: CGFloat(yCoord + gridMargin)), y: CGPoint(x: CGFloat(xCoord + gridMargin + rectWidth), y: CGFloat(yCoord + gridMargin + rectWidth)), color: "color" + String(x))
-                xCoord = xCoord + rectWidth + gridSpacing
+                drawRect(x: CGPoint(x: CGFloat(xCoord + Margin),
+                                    y: CGFloat(yCoord + Margin)),
+                         y: CGPoint(x:CGFloat(xCoord + Margin + rectWidth),
+                                    y: CGFloat(yCoord + Margin + rectWidth)),
+                         color: "color" + String(x))
+                xCoord = xCoord + rectWidth + Spacing
             }
-            yCoord = yCoord + rectWidth + gridSpacing
+            yCoord = yCoord + rectWidth + Spacing
         }
     }
     
@@ -130,21 +143,19 @@ open class PContributionsView: UIView {
         var color4 = pinkColor
         
         // Set Color Scheme
-        if colorScheme == "Default" {
-            
+        if colorList == "Default" {
             color0 = UIColor(hex: "#eeeeee")! /* #eeeeee */
             color1 = UIColor(hex: "#c6e48b")! /* #c6e48b */
             color2 = UIColor(hex: "#7bc96f")! /* #7bc96f */
             color3 = UIColor(hex: "#239a3b")! /* #239a3b */
             color4 = UIColor(hex: "#196127")! /* #196127 */
-            
-        } else if colorScheme == "Violet" {
+        } else if colorList == "Violet" {
             color0 = UIColor(hex: "#F4F4F4")! /* #F4F4F4 */
             color1 = UIColor(hex: "#EEF1FF")! /* #EEF1FF */
             color2 = UIColor(hex: "#D2DAFF")! /* #D2DAFF */
             color3 = UIColor(hex: "#AAC4FF")! /* #AAC4FF */
             color4 = UIColor(hex: "#9495FF")! /* #9495FF */
-        } else if colorScheme == "shootingStar" {
+        } else if colorList == "ShootingStar" {
             color0 = UIColor(hex: "#F4F4F4")! /* #F4F4F4 */
             color1 = UIColor(hex: "#72FFFF")! /* #72FFFF */
             color2 = UIColor(hex: "#7bc96f")! /* #00D7FF */
@@ -187,7 +198,7 @@ open class PContributionsView: UIView {
             if let override = overriddenAccessibilityValue {
                 return override
             }
-            return "ContributionView"
+            return "PContributionsView"
         }
         set {
             overriddenAccessibilityValue = newValue
@@ -261,5 +272,4 @@ extension UIColor {
             return String(format: "%02lX%02lX%02lX", lroundf(r * 255), lroundf(g * 255), lroundf(b * 255))
         }
     }
-
 }
