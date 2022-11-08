@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		04FC41875D8976D839A7CBD52A208802 /* Pods-PContributionsView_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2EDC5BE8ED17CCF95FF3854EFD931254 /* Pods-PContributionsView_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0EAFF901291A40F000162DD0 /* ColorMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAFF900291A40F000162DD0 /* ColorMap.swift */; };
+		0EAFF903291A44D400162DD0 /* ContributionsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAFF902291A44D400162DD0 /* ContributionsError.swift */; };
 		2C099A73B15C933FB365E2C0BCAD056C /* PContributionsView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D6CE4AF886FF1D39AEBB3D02F8AD9FB /* PContributionsView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		32C5B355B6DDD31D50C0D61BDD6A28DE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		37C7F68EFD26F8EDD4ACB67DB4294F9F /* PContributionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7B9A3CF06D443AD48B09BCDEB022A4 /* PContributionsView.swift */; };
@@ -38,6 +40,8 @@
 
 /* Begin PBXFileReference section */
 		0D6CE4AF886FF1D39AEBB3D02F8AD9FB /* PContributionsView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PContributionsView-umbrella.h"; sourceTree = "<group>"; };
+		0EAFF900291A40F000162DD0 /* ColorMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorMap.swift; sourceTree = "<group>"; };
+		0EAFF902291A44D400162DD0 /* ContributionsError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContributionsError.swift; sourceTree = "<group>"; };
 		2C9DBC58B4F080FD3E7A5495EBEB50AC /* Pods-PContributionsView_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PContributionsView_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		2EDC5BE8ED17CCF95FF3854EFD931254 /* Pods-PContributionsView_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PContributionsView_Tests-umbrella.h"; sourceTree = "<group>"; };
 		2FA3E0F5A98F3BB53158CA059381E16F /* PContributionsView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PContributionsView.debug.xcconfig; sourceTree = "<group>"; };
@@ -156,6 +160,8 @@
 			isa = PBXGroup;
 			children = (
 				4B7B9A3CF06D443AD48B09BCDEB022A4 /* PContributionsView.swift */,
+				0EAFF900291A40F000162DD0 /* ColorMap.swift */,
+				0EAFF902291A44D400162DD0 /* ContributionsError.swift */,
 				13CD1DA5D84CDCB0FEE7F7CAE14B094B /* Pod */,
 				E162267AC690CE9777DFC5F4B90B3B99 /* Support Files */,
 			);
@@ -383,8 +389,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EAFF903291A44D400162DD0 /* ContributionsError.swift in Sources */,
 				FFE116BB30256F84CE2E3F4BA3729BAF /* PContributionsView-dummy.m in Sources */,
 				37C7F68EFD26F8EDD4ACB67DB4294F9F /* PContributionsView.swift in Sources */,
+				0EAFF901291A40F000162DD0 /* ColorMap.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

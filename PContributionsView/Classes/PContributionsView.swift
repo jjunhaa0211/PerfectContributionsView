@@ -3,19 +3,22 @@ import UIKit
 @available(iOS 13.0, *)
 
 open class PContributionsView: UIView {
-    open var colorList: String = "Default"
     open var Margin: Float = 20
     open var Spacing: Float = 2
     open var contrilbutionsData: [[Int]] = [[]]
+    private var borderRadius: Float = 0
+    private var colorMap: ColorMap
     
     // Init for IB
     public required init?(coder aDecoder: NSCoder) {
+        colorMap = DefaultColorMap()
         super.init(coder: aDecoder)
         setupView()
     }
     
     // Init for the code way
     public override init(frame: CGRect) {
+        colorMap = DefaultColorMap()
         super.init(frame: frame)
         setupView()
     }
@@ -66,8 +69,12 @@ open class PContributionsView: UIView {
         }
     }
     
-    public func cellCornerRadius(_ cornerRadius: Int ) {
-        
+    public func cellCornerRadius(_ borderRadius: Float ) {
+        self.borderRadius = borderRadius >= 0 ? borderRadius : 0
+    }
+    
+    public func userCustomColor(_ colorMap: ColorMap) {
+        self.colorMap = colorMap
     }
     
     // MARK: Drawing Functions
@@ -108,14 +115,14 @@ open class PContributionsView: UIView {
                                     y: CGFloat(yCoord + Margin)),
                          y: CGPoint(x:CGFloat(xCoord + Margin + rectWidth),
                                     y: CGFloat(yCoord + Margin + rectWidth)),
-                         color: "color" + String(x))
+                         color: x)
                 xCoord = xCoord + rectWidth + Spacing
             }
             yCoord = yCoord + rectWidth + Spacing
         }
     }
     
-    private func drawRect(x: CGPoint, y: CGPoint, color: String) {
+    private func drawRect(x: CGPoint, y: CGPoint, color: Int) {
         
         // create the points
         let p1 = CGPoint(x: x.x, y: x.y)
@@ -124,70 +131,27 @@ open class PContributionsView: UIView {
         let p4 = CGPoint(x: x.x, y: y.y)
         let p5 = p1
         
+        //원으로 만드는 코드
+        
+        let centerPos = CGPoint(x: (y.x - x.x) / 2 + x.x, y: (y.y - x.y) / 2 + x.y)
+        
         // create the path
         let path = UIBezierPath()
-        path.move(to: p1)
-        path.addLine(to: p2)
-        path.addLine(to: p3)
-        path.addLine(to: p4)
-        path.addLine(to: p5)
+//        path.move(to: p1)
+//        path.addLine(to: p2)
+//        path.addLine(to: p3)
+//        path.addLine(to: p4)
+//        path.addLine(to: p5)
+//        path.addArc(withCenter: centerPos, radius: (y.x - x.x) / 2, startAngle: 0, endAngle: 360, clockwise: true)
         path.close()
         
-        // set default color
-        let pinkColor = UIColor(red:1.00, green:0.00, blue:1.00, alpha:1.0)
-        let clearColor = UIColor.clear
-        var color0 = pinkColor
-        var color1 = pinkColor
-        var color2 = pinkColor
-        var color3 = pinkColor
-        var color4 = pinkColor
-        
-        // Set Color Scheme
-        if colorList == "Default" {
-            color0 = UIColor(hex: "#eeeeee")! /* #eeeeee */
-            color1 = UIColor(hex: "#c6e48b")! /* #c6e48b */
-            color2 = UIColor(hex: "#7bc96f")! /* #7bc96f */
-            color3 = UIColor(hex: "#239a3b")! /* #239a3b */
-            color4 = UIColor(hex: "#196127")! /* #196127 */
-        } else if colorList == "Violet" {
-            color0 = UIColor(hex: "#F4F4F4")! /* #F4F4F4 */
-            color1 = UIColor(hex: "#EEF1FF")! /* #EEF1FF */
-            color2 = UIColor(hex: "#D2DAFF")! /* #D2DAFF */
-            color3 = UIColor(hex: "#AAC4FF")! /* #AAC4FF */
-            color4 = UIColor(hex: "#9495FF")! /* #9495FF */
-        } else if colorList == "ShootingStar" {
-            color0 = UIColor(hex: "#F4F4F4")! /* #F4F4F4 */
-            color1 = UIColor(hex: "#72FFFF")! /* #72FFFF */
-            color2 = UIColor(hex: "#7bc96f")! /* #00D7FF */
-            color3 = UIColor(hex: "#00D7FF")! /* #0096FF */
-            color4 = UIColor(hex: "##5800FF")! /* #5800FF */
-        }
-        
-        
-        var useColor: UIColor
-        
-        switch color {
-        case "color-1":
-            useColor = clearColor
-        case "color0":
-            useColor = color0
-        case "color1":
-            useColor = color1
-        case "color2":
-            useColor = color2
-        case "color3":
-            useColor = color3
-        case "color4":
-            useColor = color4
-        default:
-            useColor = pinkColor
-        }
-        
-        useColor.set()
+        colorMap.getColor(color).set()
         
         // fill the path
         path.fill()
     }
+    
+    
     
     // MARK: Accessibility
     

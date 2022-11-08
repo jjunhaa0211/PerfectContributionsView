@@ -43,10 +43,9 @@ class ViewController: UIViewController {
         
         // 사각형
         contributionView.contrilbutionsData = dataSquare
-        contributionView.colorList = "Violet"
+        contributionView.userCustomColor(ColorMap("000000", "333333", "666666", "999999", "CCCCCC"))
         
-        contributionView
-            .Spacing = 10
+        contributionView.Spacing = 10
                 
         view.addSubview(contributionView)
         contributionView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 212).isActive = true
