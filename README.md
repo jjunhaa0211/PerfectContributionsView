@@ -25,7 +25,7 @@ pod 'PContributionsView'
 
 ## Author
 
-102890390, goodjunha@gmail.com
+jjunhaa0211, goodjunha@gmail.com
 
 ## License
 
