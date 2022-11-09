@@ -6,7 +6,7 @@ open class PContributionsView: UIView {
     open var Margin: Float = 20
     open var Spacing: Float = 2
     open var contrilbutionsData: [[Int]] = [[]]
-    private var borderRadius: Float = 0
+    private var borderRadius: Double = 0
     private var colorMap: ColorMap
     
     // Init for IB
@@ -31,7 +31,6 @@ open class PContributionsView: UIView {
     }
     
     private func setupView() {
-//        self.backgroundColor = .white /////////////////////
         listBackground(.white)
         
         // Disable if AutoLayout is used
@@ -69,7 +68,7 @@ open class PContributionsView: UIView {
         }
     }
     
-    public func cellCornerRadius(_ borderRadius: Float ) {
+    public func cellCornerRadius(_ borderRadius: Double ) {
         self.borderRadius = borderRadius >= 0 ? borderRadius : 0
     }
     
@@ -122,21 +121,54 @@ open class PContributionsView: UIView {
         }
     }
     
+    private static var angles = [[270, 180], [180, 90], [90, 0], [360, 270]]
+    
     private func drawRect(x: CGPoint, y: CGPoint, color: Int) {
         
         // create the points
-        let p1 = CGPoint(x: x.x, y: x.y)
-        let p2 = CGPoint(x: y.x, y: x.y)
-        let p3 = CGPoint(x: y.x, y: y.y)
-        let p4 = CGPoint(x: x.x, y: y.y)
-        let p5 = p1
+        borderRadius = 5
+        print("x: \(x)")
+        print("y: \(y)")
+        var pre_radius = [Double(y.x - x.x), Double(x.y - y.y)];
+        let radius = [borderRadius, borderRadius * (pre_radius[0] / pre_radius[1])]
+        let point = [
+            CGPoint(x: x.x, y: y.y),
+            CGPoint(x: y.x, y: y.y),
+            CGPoint(x: y.x, y: x.y),
+            CGPoint(x: x.x, y: x.y)
+        ]
+        let circlePoint = [
+            CGPoint(x: x.x + radius[0], y: y.y + radius[1]),
+            CGPoint(x: y.x - radius[0], y: y.y + radius[1]),
+            CGPoint(x: y.x - radius[0], y: x.y - radius[1]),
+            CGPoint(x: x.x + radius[0], y: x.y - radius[1])
+        ]
+        
+        let path = UIBezierPath()
+        
+        path.addArc(withCenter: circlePoint[0], radius: borderRadius, startAngle: 0, endAngle: 360, clockwise: false)
+
+        path.addArc(withCenter: circlePoint[1], radius: borderRadius, startAngle: 0, endAngle: 360, clockwise: true)
+
+        path.addArc(withCenter: circlePoint[2], radius: borderRadius, startAngle: 0, endAngle: 360, clockwise: false)
+
+        path.addArc(withCenter: circlePoint[3], radius: borderRadius, startAngle: 0, endAngle: 360, clockwise: false)
+        
+        path.move(to: CGPoint(x: circlePoint[0].x, y: y.y))
+        path.addLine(to: CGPoint(x: circlePoint[1].x, y: y.y))
+        path.addLine(to: CGPoint(x: y.x, y: circlePoint[1].y))
+        path.addLine(to: CGPoint(x: y.x, y: circlePoint[2].y))
+        path.addLine(to: CGPoint(x: circlePoint[2].x, y: x.y))
+        path.addLine(to: CGPoint(x: circlePoint[3].x, y: x.y))
+        path.addLine(to: CGPoint(x: x.x, y: circlePoint[3].y))
+        path.addLine(to: CGPoint(x: x.x, y: circlePoint[0].y))
+        path.addLine(to: CGPoint(x: circlePoint[0].x, y: y.y))
         
         //원으로 만드는 코드
         
         let centerPos = CGPoint(x: (y.x - x.x) / 2 + x.x, y: (y.y - x.y) / 2 + x.y)
         
         // create the path
-        let path = UIBezierPath()
 //        path.move(to: p1)
 //        path.addLine(to: p2)
 //        path.addLine(to: p3)
