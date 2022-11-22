@@ -3,10 +3,10 @@ import UIKit
 @available(iOS 13.0, *)
 
 open class PContributionsView: UIView {
-    open var Margin: Float = 20
-    open var Spacing: Float = 2
+    open var margin: Float = 20
+    open var spacing: Float = 2
     open var contrilbutionsData: [[Int]] = [[]]
-    private var borderRadius: Double = 0
+    private var cornerRadius: Double = 0
     private var colorMap: ColorMap
     
     // Init for IB
@@ -15,7 +15,7 @@ open class PContributionsView: UIView {
         super.init(coder: aDecoder)
         setupView()
     }
-    
+
     // Init for the code way
     public override init(frame: CGRect) {
         colorMap = DefaultColorMap()
@@ -45,7 +45,7 @@ open class PContributionsView: UIView {
         #endif
         accessibilityLabel = "PContributionsView"
     }
-    
+
     public func listBackground(_ backgroundColor: UIColor) {
         self.backgroundColor = backgroundColor
     }
@@ -68,16 +68,18 @@ open class PContributionsView: UIView {
         }
     }
     
+    
+
     public func cellCornerRadius(_ borderRadius: Double ) {
-        self.borderRadius = borderRadius >= 0 ? borderRadius : 0
+        self.cornerRadius = borderRadius >= 0 ? borderRadius : 0
     }
     
     public func userCustomColor(_ colorMap: ColorMap) {
         self.colorMap = colorMap
     }
-    
+
     // MARK: Drawing Functions
-    
+
     override open func draw(_ rect: CGRect) {
         createGrid(with: contrilbutionsData)
     }
@@ -94,9 +96,9 @@ open class PContributionsView: UIView {
         
         if rectWidthCount > 0 {
 
-            let rectWidthVal = (width - (Margin * 2) - (Spacing * Float(rectWidthCount - 1))) / Float(rectWidthCount)
+            let rectWidthVal = (width - (margin * 2) - (spacing * Float(rectWidthCount - 1))) / Float(rectWidthCount)
 
-            let rectHeightVal = (height - (Margin * 2) - (Spacing * Float(rectHeightCount - 1))) / Float(rectHeightCount)
+            let rectHeightVal = (height - (margin * 2) - (spacing * Float(rectHeightCount - 1))) / Float(rectHeightCount)
 
             if rectWidthVal > rectHeightVal {
                 rectWidth = rectHeightVal
@@ -104,55 +106,54 @@ open class PContributionsView: UIView {
                 rectWidth = rectWidthVal
             }
         }
-//
-        
+
         var yCoord: Float = 0
         for i in data {
             var xCoord: Float = 0
             for x in i {
-                drawRect(x: CGPoint(x: CGFloat(xCoord + Margin),
-                                    y: CGFloat(yCoord + Margin)),
-                         y: CGPoint(x:CGFloat(xCoord + Margin + rectWidth),
-                                    y: CGFloat(yCoord + Margin + rectWidth)),
+                drawRect(x: CGPoint(x: CGFloat(xCoord + margin),
+                                    y: CGFloat(yCoord + margin)),
+                         y: CGPoint(x:CGFloat(xCoord + margin + rectWidth),
+                                    y: CGFloat(yCoord + margin + rectWidth)),
                          color: x)
-                xCoord = xCoord + rectWidth + Spacing
+                xCoord = xCoord + rectWidth + spacing
             }
-            yCoord = yCoord + rectWidth + Spacing
+            yCoord = yCoord + rectWidth + spacing
         }
     }
-    
+
     private static var angles = [[270, 180], [180, 90], [90, 0], [360, 270]]
-    
+
     private func drawRect(x: CGPoint, y: CGPoint, color: Int) {
-        
+
         // create the points
-        borderRadius = 5
+        cornerRadius = 7
         print("x: \(x)")
         print("y: \(y)")
-        var pre_radius = [Double(y.x - x.x), Double(x.y - y.y)];
-        let radius = [borderRadius, borderRadius * (pre_radius[0] / pre_radius[1])]
-        let point = [
-            CGPoint(x: x.x, y: y.y),
-            CGPoint(x: y.x, y: y.y),
-            CGPoint(x: y.x, y: x.y),
-            CGPoint(x: x.x, y: x.y)
-        ]
+        let pre_radius = [Double(y.x - x.x), Double(x.y - y.y)];
+        let radius = [cornerRadius, cornerRadius * (pre_radius[0] / pre_radius[1])]
+//        let point = [
+//            CGPoint(x: x.x, y: y.y),
+//            CGPoint(x: y.x, y: y.y),
+//            CGPoint(x: y.x, y: x.y),
+//            CGPoint(x: x.x, y: x.y)
+//        ]
         let circlePoint = [
             CGPoint(x: x.x + radius[0], y: y.y + radius[1]),
             CGPoint(x: y.x - radius[0], y: y.y + radius[1]),
             CGPoint(x: y.x - radius[0], y: x.y - radius[1]),
             CGPoint(x: x.x + radius[0], y: x.y - radius[1])
         ]
-        
+
         let path = UIBezierPath()
         
-        path.addArc(withCenter: circlePoint[0], radius: borderRadius, startAngle: 0, endAngle: 360, clockwise: false)
+        path.addArc(withCenter: circlePoint[0], radius: cornerRadius, startAngle: 0, endAngle: 360, clockwise: false)
 
-        path.addArc(withCenter: circlePoint[1], radius: borderRadius, startAngle: 0, endAngle: 360, clockwise: true)
+        path.addArc(withCenter: circlePoint[1], radius: cornerRadius, startAngle: 0, endAngle: 360, clockwise: true)
 
-        path.addArc(withCenter: circlePoint[2], radius: borderRadius, startAngle: 0, endAngle: 360, clockwise: false)
+        path.addArc(withCenter: circlePoint[2], radius: cornerRadius, startAngle: 0, endAngle: 360, clockwise: false)
 
-        path.addArc(withCenter: circlePoint[3], radius: borderRadius, startAngle: 0, endAngle: 360, clockwise: false)
+        path.addArc(withCenter: circlePoint[3], radius: cornerRadius, startAngle: 0, endAngle: 360, clockwise: false)
         
         path.move(to: CGPoint(x: circlePoint[0].x, y: y.y))
         path.addLine(to: CGPoint(x: circlePoint[1].x, y: y.y))
@@ -166,8 +167,8 @@ open class PContributionsView: UIView {
         
         //원으로 만드는 코드
         
-        let centerPos = CGPoint(x: (y.x - x.x) / 2 + x.x, y: (y.y - x.y) / 2 + x.y)
-        
+//        let centerPos = CGPoint(x: (y.x - x.x) / 2 + x.x, y: (y.y - x.y) / 2 + x.y)
+
         // create the path
 //        path.move(to: p1)
 //        path.addLine(to: p2)
@@ -176,15 +177,13 @@ open class PContributionsView: UIView {
 //        path.addLine(to: p5)
 //        path.addArc(withCenter: centerPos, radius: (y.x - x.x) / 2, startAngle: 0, endAngle: 360, clockwise: true)
         path.close()
-        
+
         colorMap.getColor(color).set()
         
         // fill the path
         path.fill()
     }
-    
-    
-    
+        
     // MARK: Accessibility
     
     private var overriddenAccessibilityValue: String?
@@ -218,7 +217,7 @@ extension UIColor {
         var b: CGFloat = 0.0
         var a: CGFloat = 1.0
 
-        let length = hexSanitized.characters.count
+        let length = hexSanitized.count
 
         guard Scanner(string: hexSanitized).scanHexInt32(&rgb) else { return nil }
 

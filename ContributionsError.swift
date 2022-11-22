@@ -9,6 +9,7 @@ import Foundation
 
 public enum ContributionsError : Error {
     case OutOfColorSize
+    case OutOfCornerRadius
 }
 
 extension ContributionsError : CustomStringConvertible {
@@ -16,6 +17,8 @@ extension ContributionsError : CustomStringConvertible {
         switch self {
         case .OutOfColorSize:
             return "Size of Colors must be 5."
+        case .OutOfCornerRadius:
+            return "Size of ConrnerRadius must be 8"
         }
     }
 }
