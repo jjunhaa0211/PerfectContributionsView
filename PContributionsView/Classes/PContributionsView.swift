@@ -1,6 +1,77 @@
 import UIKit
 import Foundation
 
+open class ColorMap {
+    private final var colorList: [UIColor]
+    
+    public static func checkCount(_ count: Int) throws {
+        if(count != 5) {
+            throw ContributionsError.OutOfColorSize
+        }
+    }
+    
+    public init(_ colors: UIColor...) {
+        try! ColorMap.checkCount(colors.count)
+        self.colorList = colors
+    }
+    
+    public init(_ colors: String...) {
+        try! ColorMap.checkCount(colors.count)
+        self.colorList = colors.map({ s in
+            return UIColor(hex: s)!
+        })
+    }
+    
+    public func getColor(_ index: Int) -> UIColor {
+        return index >= 0 ? colorList[index] : UIColor.clear
+    }
+}
+
+public class DefaultColorMap: ColorMap {
+    public init() {
+        super.init("#eeeeee", "#c6e48b", "#7bc96f", "#239a3b", "#196127")
+    }
+}
+
+public class VioletColorMap: ColorMap {
+    public init() {
+        super.init("#F4F4F4", "#EEF1FF", "#D2DAFF", "#AAC4FF", "#9495FF")
+    }
+}
+
+public class ShootingStarColorMap: ColorMap {
+    public init() {
+        super.init("#F4F4F4", "#72FFFF", "#00D7FF", "#0096FF", "#5800FF")
+    }
+}
+
+public enum ContributionsError : Error {
+    case OutOfColorSize
+    case OutOfCornerRadius
+}
+
+extension ContributionsError : CustomStringConvertible {
+    public var description: String {
+        switch self {
+        case .OutOfColorSize:
+            return "Size of Colors must be 5."
+        case .OutOfCornerRadius:
+            return "Size of ConrnerRadius must be 8"
+        }
+    }
+}
+
+open class CornerRadiusMap {
+    private final var ConrnerRadiusList: [Int] = []
+    
+    public static func checkCount(_ count: Int) throws {
+        if(count > 10) {
+            throw ContributionsError.OutOfCornerRadius
+        }
+    }
+}
+
+
 
 @available(iOS 13.0, *)
 
@@ -270,73 +341,3 @@ extension UIColor {
         }
     }
 }
-open class ColorMap {
-    private final var colorList: [UIColor]
-    
-    public static func checkCount(_ count: Int) throws {
-        if(count != 5) {
-            throw ContributionsError.OutOfColorSize
-        }
-    }
-    
-    public init(_ colors: UIColor...) {
-        try! ColorMap.checkCount(colors.count)
-        self.colorList = colors
-    }
-    
-    public init(_ colors: String...) {
-        try! ColorMap.checkCount(colors.count)
-        self.colorList = colors.map({ s in
-            return UIColor(hex: s)!
-        })
-    }
-    
-    public func getColor(_ index: Int) -> UIColor {
-        return index >= 0 ? colorList[index] : UIColor.clear
-    }
-}
-
-public class DefaultColorMap: ColorMap {
-    public init() {
-        super.init("#eeeeee", "#c6e48b", "#7bc96f", "#239a3b", "#196127")
-    }
-}
-
-public class VioletColorMap: ColorMap {
-    public init() {
-        super.init("#F4F4F4", "#EEF1FF", "#D2DAFF", "#AAC4FF", "#9495FF")
-    }
-}
-
-public class ShootingStarColorMap: ColorMap {
-    public init() {
-        super.init("#F4F4F4", "#72FFFF", "#00D7FF", "#0096FF", "#5800FF")
-    }
-}
-
-public enum ContributionsError : Error {
-    case OutOfColorSize
-    case OutOfCornerRadius
-}
-
-extension ContributionsError : CustomStringConvertible {
-    public var description: String {
-        switch self {
-        case .OutOfColorSize:
-            return "Size of Colors must be 5."
-        case .OutOfCornerRadius:
-            return "Size of ConrnerRadius must be 8"
-        }
-    }
-}
-
-open class CornerRadiusMap {
-    private final var ConrnerRadiusList: [Int] = []
-    
-    public static func checkCount(_ count: Int) throws {
-        if(count > 10) {
-            throw ContributionsError.OutOfCornerRadius
-        }
-    }
-}
-
