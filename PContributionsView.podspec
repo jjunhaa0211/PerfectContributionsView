@@ -68,24 +68,37 @@
 
 
 
+#Pod::Spec.new do |s|
+#  s.name                = "PContributionsView"
+#  s.version             = "0.1.0"
+#  s.summary             = "This library was originally created for github grass."
+#
+#  s.description      = <<-DESC
+#TODO: Add long description of the pod here.
+#                       DESC
+#
+#  s.homepage            = "https://github.com/jjunhaa0211/PerfectContributionsView"
+#  s.license             = "{ :type => 'MIT' }"
+#
+#  s.author              =  {'jjunhaa0211' => 'goodjunha@gmail.com' }
+#  s.platform            = :ios, "13.0"
+#
+#  s.module_name         = "SDK1"
+#  s.source              = { :git => 'https://github.com/jjunhaa0211/PerfectContributionsView.git', :tag => s.version.to_s }
+#
+##  s.source_files        = 'SDK1/SDK1/SDK1.h'
+#
+#end
+
 Pod::Spec.new do |s|
-  s.name                = "PContributionsView"
-  s.version             = "0.1.0"
-  s.summary             = "This library was originally created for github grass."
-
-  s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
-
-  s.homepage            = "https://github.com/jjunhaa0211/PerfectContributionsView"
-  s.license             = "{ :type => 'MIT' }"
-
-  s.author              =  {'jjunhaa0211' => 'goodjunha@gmail.com' }
-  s.platform            = :ios, "13.0"
-
-  s.module_name         = "SDK1"
-  s.source              = { :git => 'https://github.com/jjunhaa0211/PerfectContributionsView.git', :tag => s.version.to_s }
-
-#  s.source_files        = 'SDK1/SDK1/SDK1.h'
-
+    s.name = 'PContributionsView'
+    s.version = '0.1.0'
+    s.swift_version = '4.2'
+    s.summary = 'This library was originally created for github grass.'
+    s.homepage = 'https://github.com/jjunhaa0211/PerfectContributionsView'
+    s.license = { :type => 'MIT', :file => 'LICENSE' }
+    s.author = { 'jjunhaa0211' => 'goodjunha@gmail.com' }
+    s.source = { :git => 'https://github.com/jjunhaa0211/PerfectContributionsView.git', :tag => s.version.to_s }
+    s.ios.deployment_target = '9.0'
+    s.source_files = 'PContributionsView/Classes/**/*'
 end
