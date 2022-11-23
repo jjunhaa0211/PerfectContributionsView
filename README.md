@@ -220,3 +220,5 @@ PContributionsView is available under the MIT license. See the LICENSE file for 
 
 ## I felt that
 
+- 🇺🇸 The library still has many bugs. I will correct it little by little. If you find any bugs, please contact me. Advice is always welcome 😆
+- 🇰🇷 라이브러리에는 여전히 많은 버그가 있습니다. 조금씩 수정하겠습니다. 버그를 발견하면 저에게 연락하십시오. 조언은 언제나 환영합니다 🥹
