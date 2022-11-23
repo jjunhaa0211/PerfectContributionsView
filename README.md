@@ -53,36 +53,23 @@ Coming soon please wait 🙏
 
 <img width="1728" alt="스크린샷 2022-11-23 오후 1 40 08" src="https://user-images.githubusercontent.com/102890390/203470412-236b9e46-79ee-491f-bf07-907fae8e31c1.png">
 
-## Or use code
-
-```objc
-@property (weak , nonatomic) FSCalendar *calendar;
-```
-```objc
-// In loadView(Recommended) or viewDidLoad
-FSCalendar *calendar = [[FSCalendar alloc] initWithFrame:CGRectMake(0, 0, 320, 300)];
-calendar.dataSource = self;
-calendar.delegate = self;
-[self.view addSubview:calendar];
-self.calendar = calendar;
-```
-<br/>
-
 ## Or swift
 
 * To use `FSCalendar` in swift, you need to [Create Bridge Header](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/BuildingCocoaApps/MixandMatch.html) first.
 
 
 ```swift
-fileprivate weak var calendar: FSCalendar!
+var activityView: PContributionsView!
 ```
 ```swift
+// In Class
+let dataSquare = [ ]
+
+var contributionView = PContributionsView()
+
 // In loadView or viewDidLoad
-let calendar = FSCalendar(frame: CGRect(x: 0, y: 0, width: 320, height: 300))
-calendar.dataSource = self
-calendar.delegate = self
-view.addSubview(calendar)
-self.calendar = calendar
+contributionView.contrilbutionsData = dataSquare
+view.addSubview(contributionView)
 ```
 
 > To use **FSCalendar** in Swift3, see `Example-Swift` for details.
