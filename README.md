@@ -149,6 +149,7 @@ defult shape is square <br/>
     ]
 ```
 | -1 | NULL         |
+|----|--------------|
 | 0  | very light   |
 | 1  | little light |
 | 2  | neutral      |
