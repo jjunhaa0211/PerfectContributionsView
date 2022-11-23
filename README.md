@@ -55,9 +55,6 @@ Coming soon please wait 🙏
 
 ## Or swift
 
-* To use `FSCalendar` in swift, you need to [Create Bridge Header](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/BuildingCocoaApps/MixandMatch.html) first.
-
-
 ```swift
 var activityView: PContributionsView!
 ```
@@ -71,9 +68,6 @@ var contributionView = PContributionsView()
 contributionView.contrilbutionsData = dataSquare
 view.addSubview(contributionView)
 ```
-
-> To use **FSCalendar** in Swift3, see `Example-Swift` for details.
-
 
 ## <a id='adjusts_frame_dynamicly' /></a>Warning 
 `FSCalendar` ***doesn't*** update frame by itself, Please implement
