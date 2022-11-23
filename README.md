@@ -208,21 +208,15 @@ What is the difference between listBackground and classic BackGround? <br/>
 - Existing background won't be a single selection
 
 
-## Requirements
-
-## Installation
-
-PContributionsView is available through [CocoaPods](https://cocoapods.org). To install
-it, simply add the following line to your Podfile:
-
-```ruby
-pod 'PContributionsView'
-```
-
 ## Author
 
-jjunhaa0211, goodjunha@gmail.com
+- 🐈‍⬛ Github = jjunhaa0211
+- ✉️ Gmail = goodjunha@gmail.com
+- 🌟 Dm = jn_xhx
 
 ## License
 
 PContributionsView is available under the MIT license. See the LICENSE file for more info.
+
+## I felt that
+
