@@ -124,7 +124,7 @@ var activityView: PContributionsView!
 ```
 defult shape is square <br/>
 
-⚠️ CellCornerRadius is not safe yet, please keep below 10 if possible ⚠️
+⚠️ CellCornerRadius is not safe yet, please keep below 10 if possible ⚠️ (I'm sorry 😭)
 
 ## Requirements
 
