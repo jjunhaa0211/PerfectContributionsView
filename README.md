@@ -19,7 +19,8 @@
 ## <a id="screenshots"></a>Screenshots 
 
 ### iPhone
- <img width="483" alt="스크린샷 2022-11-23 오후 1 33 30" src="https://user-images.githubusercontent.com/102890390/203469934-1e34e51f-ec56-477a-9083-9a266cf7500c.png">
+
+<img width="725" alt="스크린샷 2022-11-23 오후 1 33 30-2" src="https://user-images.githubusercontent.com/102890390/203470018-2e7f7f81-66af-4d7c-9648-b2a7dac44a9c.png">
 
 
 # <a id="installation"></a>Installation
