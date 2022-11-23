@@ -36,8 +36,6 @@ target '<Your Target Name>' do
 end
 ```
 
-> [NSCalendarExtension](https://github.com/WenchaoD/NSCalendarExtension) is required to get iOS7 compatibility.
-
 ## Carthage: 
 
 Coming soon please wait 🙏
@@ -46,24 +44,14 @@ Coming soon please wait 🙏
 
 Coming soon please wait 🙏
 
-## Manually:
-* Drag all files under `FSCalendar` folder into your project. 👍
-
-> Alternatively to give it a test run, simply press `command+u` in `Example-Objc` or `Example-Swift` and launch the ***UITest Target***. <br>
-> Only the methods marked "👍" support IBInspectable / IBDesignable feature. [Have fun with Interface builder](#roll_with_interface_builder)
-
-
 # Setup
 
 ## Use Interface Builder
 
 1、 Drag an UIView object to ViewController Scene
-2、 Change the `Custom Class` to `FSCalendar`<br/>
-3、 Link `dataSource` and `delegate` to the ViewController <br/>
+2、 Change the `Custom Class` to `PContributionsView`<br/>
 
-![fscalendar-ib](https://cloud.githubusercontent.com/assets/5186464/9488580/a360297e-4c0d-11e5-8548-ee9274e7c4af.jpg)
-
-4、 Finally, implement `FSCalendarDataSource` and `FSCalendarDelegate` in your `ViewController`
+<img width="1728" alt="스크린샷 2022-11-23 오후 1 40 08" src="https://user-images.githubusercontent.com/102890390/203470412-236b9e46-79ee-491f-bf07-907fae8e31c1.png">
 
 ## Or use code
 
