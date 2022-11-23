@@ -4,26 +4,29 @@ import PContributionsView
 class ViewController: UIViewController {
 
     @IBOutlet var activityView: PContributionsView!
+    
 
     let dataActivity = [
-        [-1, -1, 1, 1, 2, 1, 1, 1, 3, 1, 2, 1, 1, 1, 2, 2, 2, 1, 1, 3],
-        [-1, 2, 1, 1, 2, 2, 1, 0, 2, 1, 2, 1, 1, 1, 4, 2, 0, 2, 1, 3],
+        [-1, 1, 1, 1, 2, 1, 1, 1, 3, 1, 2, 1, 1, 1, 2, 2, 2, 1, 1, 3],
+        [-1, 2, 1, 1, 2, 2, 1, 1, 2, 1, 2, 1, 1, 1, 4, 2, 1, 2, 1, 3],
         [-1, 1, 1, 1, 2, 3, 1, 1, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 4],
-        [-1, 3, 4, 2, 1, 3, 0, 4, 1, 2, 0, 3, 1, 1, 2, 2, 1, 2, 2, 4],
+        [-1, 3, 4, 2, 1, 3, 1, 4, 1, 2, 1, 3, 1, 1, 2, 2, 1, 2, 2, 4],
         [1, 2, 4, 3, 2, 3, 2, 3, 2, 1, 1, 2, 2, 1, 1, 2, 1, 1, 2],
-        [2, 3, 3, 3, 1, 3, 2, 3, 4, 0, 3, 3, 3, 2, 0, 1, 1, 3, 3],
-        [3, 1, 2, 2, 1, 3, 3, 2, 1, 0, 4, 2, 1, 1, 4, 4, 1, 2, 3]
+        [2, 3, 3, 3, 1, 3, 2, 3, 4, 1, 3, 3, 3, 2, 1, 1, 1, 3, 3],
+        [3, 1, 2, 2, 1, 3, 3, 2, 1, 1, 4, 2, 1, 1, 4, 4, 1, 2, 3]
     ]
 
+
     let dataSquare = [
-        [-1, 0, 1, 2, 1],
-        [-1, 0, 4, 1, 1],
-        [-1, 3, 1, 3, 1],
-        [-1, 0, 3, 1, 4],
-        [-1, 0, 1, 2, 1],
-        [1 ,0 ,1, 1, 1],
-        [1 ,0 ,1, 1, -1]
+        [-1, 0, -1, 0, -1],
+        [0, -1, 0, -1, 0],
+        [-1, 0, -1, 0, -1],
+        [0, -1, 0, -1, 0],
+        [-1, 0, -1, 0, -1],
+        [0 ,-1 ,0, -1, 0]
     ]
+    
+
 
     var contributionView = PContributionsView()
 
@@ -37,9 +40,14 @@ class ViewController: UIViewController {
         activityView.contrilbutionsData = dataActivity
         
         // 사각형
-        contributionView.contrilbutionsData = dataSquare
-//        contributionView.userCustomColor(ColorMap("000000", "333333", "666666", "999999", "CCCCCC"))
-        contributionView.cellCornerRadius(1)
+//        contributionView.contrilbutionsData = dataSquare
+//        contributionView.userCustomColor(ColorMap("#F4F4F4", "#EEF1FF", "#D2DAFF", "#AAC4FF", "#9495FF"))
+        activityView.userCustomColor(ColorMap("#F4F4F4", "#72FFFF", "#00D7FF", "#0096FF", "#5800FF"))
+        contributionView.cellCornerRadius(10)
+        activityView.cellCornerRadius(0)
+        activityView.spacing = 5
+        activityView.cellCornerRadius(10)
+        activityView.listBackground(.red)
 //        contributionView.listBackground(.blue)
     
         contributionView.spacing = 10
