@@ -6,9 +6,6 @@
 [![License](https://img.shields.io/cocoapods/l/PContributionsView.svg?style=flat)](https://cocoapods.org/pods/PContributionsView)
 [![Platform](https://img.shields.io/cocoapods/p/PContributionsView.svg?style=flat)](https://cocoapods.org/pods/PContributionsView)
 
-# PContributionsView
-
-
 # Table of contents
 * [Screenshots](#screenshots)
 * [Installation](#installation)
