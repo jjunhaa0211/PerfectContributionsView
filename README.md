@@ -158,6 +158,56 @@ defult shape is square <br/>
 
 <img width="188" alt="스크린샷 2022-11-23 오후 2 10 12" src="https://user-images.githubusercontent.com/102890390/203472943-4266ce16-140a-451e-a741-8543bb0bc337.png">
 
+### ContributionsCell Spacing
+
+```swift
+var activityView: PContributionsView!
+```
+
+```swift
+// In loadView or viewDidLoad
+      activityView.spacing = 5
+```
+defult Spacing is "2"
+
+### listBackgroud
+
+```swift
+var activityView: PContributionsView!
+```
+
+```swift
+// In Class
+
+    let dataActivity = [
+        [-1, 1, 1, 1, 2, 1, 1, 1, 3, 1, 2, 1, 1, 1, 2, 2, 2, 1, 1, 3],
+        [-1, 2, 1, 1, 2, 2, 1, 1, 2, 1, 2, 1, 1, 1, 4, 2, 1, 2, 1, 3],
+        [-1, 1, 1, 1, 2, 3, 1, 1, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 4],
+        [-1, 3, 4, 2, 1, 3, 1, 4, 1, 2, 1, 3, 1, 1, 2, 2, 1, 2, 2, 4],
+        [1, 2, 4, 3, 2, 3, 2, 3, 2, 1, 1, 2, 2, 1, 1, 2, 1, 1, 2],
+        [2, 3, 3, 3, 1, 3, 2, 3, 4, 1, 3, 3, 3, 2, 1, 1, 1, 3, 3],
+        [3, 1, 2, 2, 1, 3, 3, 2, 1, 1, 4, 2, 1, 1, 4, 4, 1, 2, 3]
+    ]
+    
+    let dataSquare = [
+        [-1, 0, -1, 0, -1],
+        [0, -1, 0, -1, 0],
+        [-1, 0, -1, 0, -1],
+        [0, -1, 0, -1, 0],
+        [-1, 0, -1, 0, -1],
+        [0 ,-1 ,0, -1, 0]
+    ]
+
+// In loadView or viewDidLoad
+      activityView.listBackground(.red)
+      dataActivity.listBackground(.green)
+```
+
+What is the difference between listBackground and classic BackGround? <br/>
+- listBackground is based on the created view, so if there are multiple views in one view, you can change the color of only the one you want.
+- Existing background won't be a single selection
+
+
 ## Requirements
 
 ## Installation
