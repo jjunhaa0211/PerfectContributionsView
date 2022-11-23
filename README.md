@@ -69,33 +69,37 @@ contributionView.contrilbutionsData = dataSquare
 view.addSubview(contributionView)
 ```
 
-## <a id='adjusts_frame_dynamicly' /></a>Warning 
-`FSCalendar` ***doesn't*** update frame by itself, Please implement
-
-* For ***AutoLayout***
-
-```objc
-- (void)calendar:(FSCalendar *)calendar boundingRectWillChange:(CGRect)bounds animated:(BOOL)animated
-{
-    self.calendarHeightConstraint.constant = CGRectGetHeight(bounds);
-    // Do other updates here
-    [self.view layoutIfNeeded];
-}
-```
-
-* For ***Manual Layout***
-
-```objc
-- (void)calendar:(FSCalendar *)calendar boundingRectWillChange:(CGRect)bounds animated:(BOOL)animated
-{
-    calendar.frame = (CGRect){calendar.frame.origin,bounds.size};
-    // Do other updates here
-}
-```
-
 ## Example
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+To run the example project, clone the repo, and run `arch -x86_64 pod install` from the Example directory first.
+
+### Make Contributions Cell
+
+```swift
+var activityView: PContributionsView!
+```
+
+```swift
+// In Class
+    let dataActivity = [
+        [-1, 1, 1, 1, 2, 1, 1, 1, 3, 1, 2, 1, 1, 1, 2, 2, 2, 1, 1, 3],
+        [-1, 2, 1, 1, 2, 2, 1, 1, 2, 1, 2, 1, 1, 1, 4, 2, 1, 2, 1, 3],
+        [-1, 1, 1, 1, 2, 3, 1, 1, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 4],
+        [-1, 3, 4, 2, 1, 3, 1, 4, 1, 2, 1, 3, 1, 1, 2, 2, 1, 2, 2, 4],
+        [1, 2, 4, 3, 2, 3, 2, 3, 2, 1, 1, 2, 2, 1, 1, 2, 1, 1, 2],
+        [2, 3, 3, 3, 1, 3, 2, 3, 4, 1, 3, 3, 3, 2, 1, 1, 1, 3, 3],
+        [3, 1, 2, 2, 1, 3, 3, 2, 1, 1, 4, 2, 1, 1, 4, 4, 1, 2, 3]
+    ]
+
+
+    var contributionView = PContributionsView()
+
+// In loadView or viewDidLoad
+// Interface Builder
+        activityView.contrilbutionsData = dataActivity
+```
+
+
 
 ## Requirements
 
