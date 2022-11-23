@@ -27,38 +27,24 @@
 
 ## CocoaPods:
 
-* For iOS8+: 👍
+* For iOS9+: 🌈
 
 ```ruby
 use_frameworks!
 target '<Your Target Name>' do
-    pod 'FSCalendar'
-end
-```
-
-* For iOS7+:
-
-```ruby
-target '<Your Target Name>' do
-	pod 'FSCalendar'
+    pod 'PContributionsView'
 end
 ```
 
 > [NSCalendarExtension](https://github.com/WenchaoD/NSCalendarExtension) is required to get iOS7 compatibility.
 
 ## Carthage: 
-* For iOS8+
 
-```ruby
-github "WenchaoD/FSCalendar"
-```
+Coming soon please wait 🙏
 
 ## SPM:
 
-Add dependency:
-```swift
-.package(url: "https://github.com/WenchaoD/FSCalendar.git", from: "2.8.3")
-```
+Coming soon please wait 🙏
 
 ## Manually:
 * Drag all files under `FSCalendar` folder into your project. 👍
