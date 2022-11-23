@@ -12,7 +12,7 @@
 # Table of contents
 * [Screenshots](#screenshots)
 * [Installation](#installation)
-* [Pre-knowledge](#pre-knowledge)
+* [Setup](#Setup)
 * [Support](#support)
 * [Contact](#contact)
 
@@ -44,7 +44,7 @@ Coming soon please wait 🙏
 
 Coming soon please wait 🙏
 
-# Setup
+# <a id="Setup"></a>Setup
 
 ## Use Interface Builder
 
