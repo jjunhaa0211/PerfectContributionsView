@@ -98,7 +98,7 @@ var activityView: PContributionsView!
 // Interface Builder
         activityView.contrilbutionsData = dataActivity
 ```
-### Change Color
+### Change Cell Color
 
 ```swift
 var activityView: PContributionsView!
@@ -109,8 +109,22 @@ var activityView: PContributionsView!
 // In loadView or viewDidLoad
       activityView.userCustomColor(ColorMap("#F4F4F4", "#72FFFF", "#00D7FF", "#0096FF", "#5800FF"))
 ```
-//defult Color is githubContributionsColor 🟩
+defult Color is githubContributionsColor 🟩
 
+### CellCornerRadius
+
+```swift
+var activityView: PContributionsView!
+```
+
+```swift
+
+// In loadView or viewDidLoad
+      activityView.cellCornerRadius(10)
+```
+defult shape is square <br/>
+
+⚠️ CellCornerRadius is not safe yet, please keep below 10 if possible ⚠️
 
 ## Requirements
 
