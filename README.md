@@ -13,8 +13,8 @@
 * [Screenshots](#screenshots)
 * [Installation](#installation)
 * [Setup](#Setup)
-* [Support](#support)
-* [Contact](#contact)
+* [Author](#Author)
+* [I felt that](#I felt that)
 
 ## <a id="screenshots"></a>Screenshots 
 
@@ -69,7 +69,7 @@ contributionView.contrilbutionsData = dataSquare
 view.addSubview(contributionView)
 ```
 
-## Example
+# <a id="Example"></a>Example
 
 To run the example project, clone the repo, and run `arch -x86_64 pod install` from the Example directory first.
 
@@ -207,18 +207,18 @@ What is the difference between listBackground and classic BackGround? <br/>
 - listBackground is based on the created view, so if there are multiple views in one view, you can change the color of only the one you want.
 - Existing background won't be a single selection
 
-
-## Author
+# <a id="Author"></a>Author
 
 - 🐈‍⬛ Github = jjunhaa0211
 - ✉️ Gmail = goodjunha@gmail.com
 - 🌟 Dm = jn_xhx
 
-## License
-
-PContributionsView is available under the MIT license. See the LICENSE file for more info.
-
-## I felt that
+# <a id="I felt that"></a>I felt that
 
 - 🇺🇸 The library still has many bugs. I will correct it little by little. If you find any bugs, please contact me. Advice is always welcome 😆
 - 🇰🇷 라이브러리에는 여전히 많은 버그가 있습니다. 조금씩 수정하겠습니다. 버그를 발견하면 저에게 연락하십시오. 조언은 언제나 환영합니다 🥹
+
+
+## License
+
+PContributionsView is available under the MIT license. See the LICENSE file for more info.
