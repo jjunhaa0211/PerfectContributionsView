@@ -10,6 +10,7 @@
 * [Screenshots](#screenshots)
 * [Installation](#installation)
 * [Setup](#Setup)
+* [Example](#Example)
 * [Author](#Author)
 * [Realization](#Realization)
 
