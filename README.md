@@ -48,7 +48,7 @@ Coming soon please wait 🙏
 
 ## Use Interface Builder
 
-1、 Drag an UIView object to ViewController Scene
+1、 Drag an UIView object to ViewController Scene<br/>
 2、 Change the `Custom Class` to `PContributionsView`<br/>
 
 <img width="1728" alt="스크린샷 2022-11-23 오후 1 40 08" src="https://user-images.githubusercontent.com/102890390/203470412-236b9e46-79ee-491f-bf07-907fae8e31c1.png">
