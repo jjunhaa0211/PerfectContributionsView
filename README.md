@@ -118,6 +118,15 @@ var activityView: PContributionsView!
 ```
 
 ```swift
+// In Class
+    let dataSquare = [
+        [-1, 0, -1, 0, -1],
+        [0, -1, 0, -1, 0],
+        [-1, 0, -1, 0, -1],
+        [0, -1, 0, -1, 0],
+        [-1, 0, -1, 0, -1],
+        [0 ,-1 ,0, -1, 0]
+    ]
 
 // In loadView or viewDidLoad
       activityView.cellCornerRadius(10)
@@ -125,6 +134,27 @@ var activityView: PContributionsView!
 defult shape is square <br/>
 
 ⚠️ CellCornerRadius is not safe yet, please keep below 10 if possible ⚠️ (I'm sorry 😭)
+
+### Color Level
+
+```swift
+// In Class
+    let dataSquare = [
+        [1, 2, -1, 4, -1],
+        [1, -1, 2, 1, 0],
+        [4, 2, -1, 0, -1],
+        [0, 4, 0, 2, 1],
+        [1, 0, -1, 0, -1],
+        [4 ,-1 ,0, -1, 1]
+    ]
+```
+| -1 | NULL         |
+| 0  | very light   |
+| 1  | little light |
+| 2  | neutral      |
+| 3  | bit darker   |
+| 4  | very dark    |
+
 
 ## Requirements
 
