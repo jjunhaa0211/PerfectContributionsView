@@ -21,27 +21,6 @@
 ### iPhone
 ![fscalendar](https://cloud.githubusercontent.com/assets/5186464/10262249/4fabae40-69f2-11e5-97ab-afbacd0a3da2.jpg)
 
-### iPad
-![fscalendar-ipad](https://cloud.githubusercontent.com/assets/5186464/10927681/d2448cb6-82dc-11e5-9d11-f664a06698a7.jpg)
-
-### Safe Orientation
-![fscalendar-scope-orientation-autolayout](https://cloud.githubusercontent.com/assets/5186464/20325758/ea125e1e-abc0-11e6-9e29-491acbcb0d07.gif)
-
-### Today Extension
-|    iOS8/9    |    iOS10    |
-|--------------|-------------|
-|![today1](https://cloud.githubusercontent.com/assets/5186464/20288375/ed3fba0e-ab0d-11e6-8b15-43d3dc656f22.gif)|![today2](https://cloud.githubusercontent.com/assets/5186464/20288378/f11e318c-ab0d-11e6-8d1d-9d89b563e9d7.gif)|
-
-### Interactive Scope Gesture
-| ![1](https://cloud.githubusercontent.com/assets/5186464/21559640/e92a9ccc-ce8a-11e6-8c60-e52204f33249.gif) |
-| ---- |
-
-### DIY support
-|  ![1](https://cloud.githubusercontent.com/assets/5186464/20026983/22354a0e-a342-11e6-8ae6-0614ea7f35ae.gif)    |
-| -------------  |
-> To customize your own cell, view DIY Example in `Example-Swift` or `Example-Objc`
-
-
 ### Swipe-To-Choose
 
 |Single-Selection<br/>Swipe-To-Choose|Multiple-Selection<br/>Swipe-To-Choose|DIY<br/>Swipe-To-Choose|
