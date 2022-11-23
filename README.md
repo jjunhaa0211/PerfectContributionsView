@@ -156,6 +156,7 @@ defult shape is square <br/>
 | 3  | bit darker   |
 | 4  | very dark    |
 
+<img width="188" alt="스크린샷 2022-11-23 오후 2 10 12" src="https://user-images.githubusercontent.com/102890390/203472943-4266ce16-140a-451e-a741-8543bb0bc337.png">
 
 ## Requirements
 
