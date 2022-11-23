@@ -98,7 +98,18 @@ var activityView: PContributionsView!
 // Interface Builder
         activityView.contrilbutionsData = dataActivity
 ```
+### Change Color
 
+```swift
+var activityView: PContributionsView!
+```
+
+```swift
+
+// In loadView or viewDidLoad
+      activityView.userCustomColor(ColorMap("#F4F4F4", "#72FFFF", "#00D7FF", "#0096FF", "#5800FF"))
+```
+//defult Color is githubContributionsColor 🟩
 
 
 ## Requirements
