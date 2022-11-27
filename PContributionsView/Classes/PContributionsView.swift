@@ -200,7 +200,6 @@ open class PContributionsView: UIView {
     private func drawRect(x: CGPoint, y: CGPoint, color: Int) {
 
         // create the points
-        cornerRadius = 7
 //        print("x: \(x)")
 //        print("y: \(y)")
         let pre_radius = [Double(y.x - x.x), Double(x.y - y.y)];
