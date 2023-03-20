@@ -37,7 +37,11 @@ end
 
 ## Carthage: 
 
-Coming soon please wait 🙏
+* For iOS9+: 🌈
+
+```ruby
+github "jjunhaa0211/PContributionsView"
+```
 
 ## SPM:
 
