@@ -17,14 +17,14 @@ class ViewController: UIViewController {
     ]
 
 
-    let dataSquare = [
-        [-1, 0, -1, 0, -1],
-        [0, -1, 0, -1, 0],
-        [-1, 0, -1, 0, -1],
-        [0, -1, 0, -1, 0],
-        [-1, 0, -1, 0, -1],
-        [0 ,-1 ,0, -1, 0]
-    ]
+//    let dataSquare = [
+//        [-1, 0, -1, 0, -1],
+//        [0, -1, 0, -1, 0],
+//        [-1, 0, -1, 0, -1],
+//        [0, -1, 0, -1, 0],
+//        [-1, 0, -1, 0, -1],
+//        [0 ,-1 ,0, -1, 0]
+//    ]
     
 
 
@@ -44,7 +44,7 @@ class ViewController: UIViewController {
 //        contributionView.userCustomColor(ColorMap("#F4F4F4", "#EEF1FF", "#D2DAFF", "#AAC4FF", "#9495FF"))
         activityView.userCustomColor(ColorMap("#F4F4F4", "#72FFFF", "#00D7FF", "#0096FF", "#5800FF"))
 //        contributionView.cellCornerRadius(10)
-        activityView.cellCornerRadius(0)
+        activityView.cellCornerRadius(3)
 //        activityView.spacing = 5
 //        activityView.listBackground(.red)
 //        contributionView.listBackground(.blue)
