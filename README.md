@@ -46,7 +46,11 @@ github "jjunhaa0211/PContributionsView"
 
 ## SPM:
 
-Coming soon please wait 🙏
+* For iOS13+: ⚡️
+
+```ruby
+https://github.com/jjunhaa0211/PerfectContributionsView
+```
 
 # <a id="Setup"></a>Setup
 
