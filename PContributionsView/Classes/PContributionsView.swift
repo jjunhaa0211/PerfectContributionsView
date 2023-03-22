@@ -2,7 +2,7 @@ import UIKit
 import Foundation
 
 open class ColorMap {
-    private var colorList: [UIColor]
+    open var colorList: [UIColor]
     
     public static func checkCount(_ count: Int) throws {
         if(count != 5) {
@@ -76,9 +76,7 @@ open class CornerRadiusMap {
 }
 
 
-
 @available(iOS 13.0, *)
-
 open class PContributionsView: UIView {
     open var margin: Float = 20
     open var spacing: Float = 2
