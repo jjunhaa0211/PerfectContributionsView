@@ -110,10 +110,10 @@ open class PContributionsView: UIView {
     private func setupView() {
         listBackground(.white)
         
-        // Disable if AutoLayout is used
+        // Disable if AutoLayout is used = AutoLayout을 사용하는 경우 비활성화
         self.translatesAutoresizingMaskIntoConstraints = false
         
-        // Accessibility
+        // Accessibility = 접근성
         isAccessibilityElement = true
         #if swift(>=4.2)
         accessibilityTraits = UIAccessibilityTraits.updatesFrequently
@@ -144,21 +144,24 @@ open class PContributionsView: UIView {
             print("📐 Out of Range")
         }
     }
-    
-    
 
     public func cellCornerRadius(_ borderRadius: Double ) {
         self.cornerRadius = borderRadius >= 0 ? borderRadius : 0
     }
-    
+
     public func userCustomColor(_ colorMap: ColorMap) {
         self.colorMap = colorMap
     }
 
     // MARK: Drawing Functions
 
+    // MARK: Drawing Functions
+
     override open func draw(_ rect: CGRect) {
+        guard let context = UIGraphicsGetCurrentContext() else { return }
+        context.saveGState()
         createGrid(with: contrilbutionsData)
+        context.restoreGState()
     }
     
     private func createGrid(with data: [[Int]]) {
@@ -214,15 +217,10 @@ open class PContributionsView: UIView {
         ]
 
         let path = UIBezierPath()
-        
         path.addArc(withCenter: circlePoint[0], radius: cornerRadius, startAngle: 0, endAngle: 360, clockwise: false)
-
         path.addArc(withCenter: circlePoint[1], radius: cornerRadius, startAngle: 0, endAngle: 360, clockwise: true)
-
         path.addArc(withCenter: circlePoint[2], radius: cornerRadius, startAngle: 0, endAngle: 360, clockwise: false)
-
         path.addArc(withCenter: circlePoint[3], radius: cornerRadius, startAngle: 0, endAngle: 360, clockwise: false)
-        
         path.move(to: CGPoint(x: circlePoint[0].x, y: y.y))
         path.addLine(to: CGPoint(x: circlePoint[1].x, y: y.y))
         path.addLine(to: CGPoint(x: y.x, y: circlePoint[1].y))
