@@ -213,6 +213,29 @@ What is the difference between listBackground and classic BackGround? <br/>
 - listBackground is based on the created view, so if there are multiple views in one view, you can change the color of only the one you want.
 - Existing background won't be a single selection
 
+### ColorMap
+
+(PerfectContributionsView Color supported)
+```swift
+//In loadView or viewDidLoad
+
+    let colorMap = VioletColorMap()
+    let c1 = colorMap.getColor(0)
+    let c2 = colorMap.getColor(1)
+    let c3 = colorMap.getColor(2)
+    let c4 = colorMap.getColor(3)
+        
+    activityView.userCustomColor(ColorMap(c1, c2, c3, c4, c4))
+
+```
+
+```swift
+// Colors currently supported
+    let defaultColorMap = DefaultColorMap() // github green color 🟩
+    let violetColorMap = VioletColorMap() // Violet Related colors 🟪
+    let shootingStarColorMap = ShootingStarColorMap() // shootiongStar color 🟦
+```
+
 # <a id="Author"></a>Author
 
 - 🐈‍⬛ Github = jjunhaa0211
