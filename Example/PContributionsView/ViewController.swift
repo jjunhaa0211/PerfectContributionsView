@@ -42,12 +42,21 @@ class ViewController: UIViewController {
         // 사각형
 //        contributionView.contrilbutionsData = dataSquare
 //        contributionView.userCustomColor(ColorMap("#F4F4F4", "#EEF1FF", "#D2DAFF", "#AAC4FF", "#9495FF"))
-        activityView.userCustomColor(ColorMap("#F4F4F4", "#72FFFF", "#00D7FF", "#0096FF", "#5800FF"))
+//        activityView.userCustomColor(ColorMap("#F4F4F4", "#72FFFF", "#00D7FF", "#0096FF", "#5800FF"))
 //        contributionView.cellCornerRadius(10)
         activityView.cellCornerRadius(3)
 //        activityView.spacing = 5
 //        activityView.listBackground(.red)
 //        contributionView.listBackground(.blue)
+        
+        let colorMap = VioletColorMap()
+        let c1 = colorMap.getColor(0)
+        let c2 = colorMap.getColor(1)
+        let c3 = colorMap.getColor(2)
+        let c4 = colorMap.getColor(3)
+        
+        activityView.userCustomColor(ColorMap(c1, c2, c3, c4, c4))
+        
     
         contributionView.spacing = 10
 
