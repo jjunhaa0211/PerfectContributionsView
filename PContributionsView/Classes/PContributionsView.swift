@@ -2,7 +2,7 @@ import UIKit
 import Foundation
 
 open class ColorMap {
-    private final var colorList: [UIColor]
+    private var colorList: [UIColor]
     
     public static func checkCount(_ count: Int) throws {
         if(count != 5) {
@@ -66,7 +66,7 @@ extension ContributionsError : CustomStringConvertible {
 }
 
 open class CornerRadiusMap {
-    private final var ConrnerRadiusList: [Int] = []
+    private var ConrnerRadiusList: [Int] = []
     
     public static func checkCount(_ count: Int) throws {
         if(count > 10) {
