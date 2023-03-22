@@ -23,7 +23,11 @@ open class ColorMap {
     }
     
     public func getColor(_ index: Int) -> UIColor {
-        return index >= 0 ? colorList[index] : UIColor.clear
+        if index >= 0 && index < colorList.count {
+            return colorList[index]
+        } else {
+            return UIColor.clear
+        }
     }
 }
 
@@ -229,17 +233,6 @@ open class PContributionsView: UIView {
         path.addLine(to: CGPoint(x: x.x, y: circlePoint[0].y))
         path.addLine(to: CGPoint(x: circlePoint[0].x, y: y.y))
         
-        //원으로 만드는 코드
-        
-//        let centerPos = CGPoint(x: (y.x - x.x) / 2 + x.x, y: (y.y - x.y) / 2 + x.y)
-
-        // create the path
-//        path.move(to: p1)
-//        path.addLine(to: p2)
-//        path.addLine(to: p3)
-//        path.addLine(to: p4)
-//        path.addLine(to: p5)
-//        path.addArc(withCenter: centerPos, radius: (y.x - x.x) / 2, startAngle: 0, endAngle: 360, clockwise: true)
         path.close()
 
         colorMap.getColor(color).set()
