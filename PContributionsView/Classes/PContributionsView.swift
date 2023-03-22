@@ -199,17 +199,9 @@ open class PContributionsView: UIView {
 
     private func drawRect(x: CGPoint, y: CGPoint, color: Int) {
 
-        // create the points
-//        print("x: \(x)")
-//        print("y: \(y)")
         let pre_radius = [Double(y.x - x.x), Double(x.y - y.y)];
         let radius = [cornerRadius, cornerRadius * (pre_radius[0] / pre_radius[1])]
-//        let point = [
-//            CGPoint(x: x.x, y: y.y),
-//            CGPoint(x: y.x, y: y.y),
-//            CGPoint(x: y.x, y: x.y),
-//            CGPoint(x: x.x, y: x.y)
-//        ]
+
         let circlePoint = [
             CGPoint(x: x.x + radius[0], y: y.y + radius[1]),
             CGPoint(x: y.x - radius[0], y: y.y + radius[1]),
