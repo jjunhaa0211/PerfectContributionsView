@@ -176,6 +176,12 @@ var activityView: PContributionsView!
 ```
 defult Spacing is "2"
 
+### Change Shape
+
+```swift
+activityView.shapeType = .hexagon // .rectangle // .triangle // .pentagon
+```
+
 ### listBackgroud
 
 ```swift
