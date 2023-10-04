@@ -167,7 +167,7 @@ open class PContributionsView: UIView {
         context.restoreGState()
     }
     
-    public func createGrid(with data: [[Int]], shapeType: ShapeType) {
+    public func createGrid(with data: [[Int]], shapeType: ShapeType = .rectangle) {
         
         let rectHeightCount = data.count
         let rectWidthCount = data.max(by: { $0.count < $1.count })!.count
