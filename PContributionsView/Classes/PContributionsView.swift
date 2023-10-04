@@ -1,6 +1,11 @@
 import UIKit
 import Foundation
 
+public enum ShapeType {
+    case rectangle
+    case triangle
+}
+
 open class ColorMap {
     open var colorList: [UIColor]
     
@@ -84,6 +89,8 @@ open class PContributionsView: UIView {
     private var cornerRadius: Double = 0
     private var colorMap: ColorMap
     
+    open var shapeType: ShapeType = .rectangle
+        
     // Init for IB
     public required init?(coder aDecoder: NSCoder) {
         colorMap = DefaultColorMap()
@@ -153,23 +160,21 @@ open class PContributionsView: UIView {
 
     // MARK: Drawing Functions
 
-    // MARK: Drawing Functions
-
     override open func draw(_ rect: CGRect) {
         guard let context = UIGraphicsGetCurrentContext() else { return }
         context.saveGState()
-        createGrid(with: contrilbutionsData)
+        createGrid(with: contrilbutionsData, shapeType: shapeType)
         context.restoreGState()
     }
     
-    private func createGrid(with data: [[Int]]) {
+    public func createGrid(with data: [[Int]], shapeType: ShapeType) {
         
         let rectHeightCount = data.count
         let rectWidthCount = data.max(by: { $0.count < $1.count })!.count
 
         let width: Float = Float(self.bounds.width)
         let height: Float = Float(self.bounds.height)
-        
+                
         var rectWidth: Float = 10 // Default Value
         
         if rectWidthCount > 0 {
@@ -189,11 +194,10 @@ open class PContributionsView: UIView {
         for i in data {
             var xCoord: Float = 0
             for x in i {
-                drawRect(x: CGPoint(x: CGFloat(xCoord + margin),
-                                    y: CGFloat(yCoord + margin)),
-                         y: CGPoint(x:CGFloat(xCoord + margin + rectWidth),
-                                    y: CGFloat(yCoord + margin + rectWidth)),
-                         color: x)
+                drawShape(x: CGPoint(x: CGFloat(xCoord + margin), y: CGFloat(yCoord + margin)),
+                          y: CGPoint(x: CGFloat(xCoord + margin + rectWidth), y: CGFloat(yCoord + margin + rectWidth)),
+                          color: x,
+                          shapeType: shapeType)
                 xCoord = xCoord + rectWidth + spacing
             }
             yCoord = yCoord + rectWidth + spacing
@@ -201,6 +205,55 @@ open class PContributionsView: UIView {
     }
 
     private static var angles = [[270, 180], [180, 90], [90, 0], [360, 270]]
+    
+    private func drawShape(x: CGPoint, y: CGPoint, color: Int, shapeType: ShapeType) {
+        let path = UIBezierPath()
+
+        switch shapeType {
+        case .rectangle:
+            path.move(to: CGPoint(x: x.x, y: y.y))
+            path.addLine(to: CGPoint(x: y.x, y: y.y))
+            path.addLine(to: CGPoint(x: y.x, y: x.y))
+            path.addLine(to: CGPoint(x: x.x, y: x.y))
+            path.close()
+        case .triangle:
+            let angle: CGFloat = .pi / 10
+            
+            var shouldMove: Bool = true
+            var currentPoint = CGPoint.zero
+            
+            for i in 0..<10 {
+                let radius = (i % 2 == 0) ? cornerRadius : cornerRadius / 2
+                let xVal = (radius * cos(angle * CGFloat(i))) + (x.x + y.x) / 2
+                let yVal = (radius * sin(angle * CGFloat(i))) + (x.y + y.y) / 2
+                let point = CGPoint(x: xVal, y: yVal)
+                
+                if shouldMove {
+                    path.move(to: point)
+                    currentPoint = point
+                    shouldMove = false
+                } else {
+                    path.addLine(to: point)
+                }
+                
+                currentPoint = point
+            }
+            
+            path.close()
+        }
+        
+        if shapeType == .triangle {
+            path.move(to: CGPoint(x: (x.x + y.x) / 2, y: y.y))
+            path.addLine(to: CGPoint(x: x.x, y: x.y))
+            path.addLine(to: CGPoint(x: y.x, y: x.y))
+            path.close()
+        }
+        
+        colorMap.getColor(color).set()
+        
+        // fill the path
+        path.fill()
+    }
 
     private func drawRect(x: CGPoint, y: CGPoint, color: Int) {
 

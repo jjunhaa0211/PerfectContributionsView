@@ -7,14 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0E3B38F929CB1B4B006CD4CF /* ColorMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3B38F829CB1B4B006CD4CF /* ColorMap.swift */; };
 		0EB7350C29C89220002B01E1 /* PContributionsView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0EB7350B29C89220002B01E1 /* PContributionsView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0EB7351A29C89309002B01E1 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 0EB7351829C89309002B01E1 /* .gitkeep */; };
 		0EB7351B29C89309002B01E1 /* PContributionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB7351929C89309002B01E1 /* PContributionsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0E3B38F829CB1B4B006CD4CF /* ColorMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorMap.swift; sourceTree = "<group>"; };
 		0EB7350829C89220002B01E1 /* PContributionsView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PContributionsView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EB7350B29C89220002B01E1 /* PContributionsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PContributionsView.h; sourceTree = "<group>"; };
 		0EB7351829C89309002B01E1 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
@@ -62,7 +60,6 @@
 			children = (
 				0EB7351829C89309002B01E1 /* .gitkeep */,
 				0EB7351929C89309002B01E1 /* PContributionsView.swift */,
-				0E3B38F829CB1B4B006CD4CF /* ColorMap.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -147,7 +144,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E3B38F929CB1B4B006CD4CF /* ColorMap.swift in Sources */,
 				0EB7351B29C89309002B01E1 /* PContributionsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -38,6 +38,8 @@ class ViewController: UIViewController {
         
         // Interface Builder
         activityView.contrilbutionsData = dataActivity
+        activityView.shapeType = .triangle
+        activityView.createGrid(with: dataActivity, shapeType: .triangle)
         
         // 사각형
 //        contributionView.contrilbutionsData = dataSquare
