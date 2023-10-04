@@ -38,7 +38,7 @@ class ViewController: UIViewController {
         
         // Interface Builder
         activityView.contrilbutionsData = dataActivity
-        activityView.shapeType = .hexagon
+        activityView.shapeType = .triangle
         activityView.createGrid(with: dataActivity)
         
         // 사각형
