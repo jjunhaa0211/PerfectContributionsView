@@ -4,6 +4,8 @@ import Foundation
 public enum ShapeType {
     case rectangle
     case triangle
+    case pentagon
+    case hexagon
 }
 
 open class ColorMap {
@@ -88,6 +90,8 @@ open class PContributionsView: UIView {
     open var contrilbutionsData: [[Int]] = [[]]
     private var cornerRadius: Double = 0
     private var colorMap: ColorMap
+    
+    var rectWidth: Float = 15
     
     open var shapeType: ShapeType = .rectangle
         
@@ -239,21 +243,44 @@ open class PContributionsView: UIView {
                 currentPoint = point
             }
             
-            path.close()
+        case .pentagon: // 5각형 그리기
+            let radius: CGFloat = CGFloat(rectWidth / 2)
+                let centerX: CGFloat = (x.x + y.x) / 2
+                let centerY: CGFloat = (x.y + y.y) / 2
+                let angle: CGFloat = .pi * 2 / 5
+                for i in 0..<5 {
+                    let xVal = centerX + radius * cos(angle * CGFloat(i))
+                    let yVal = centerY + radius * sin(angle * CGFloat(i))
+                    let point = CGPoint(x: xVal, y: yVal)
+                    if i == 0 {
+                        path.move(to: point)
+                    } else {
+                        path.addLine(to: point)
+                    }
+                }
+                path.close()
+            case .hexagon: // 6각형 그리기
+            let radius: CGFloat = CGFloat(rectWidth / 2)
+                let centerX: CGFloat = (x.x + y.x) / 2
+                let centerY: CGFloat = (x.y + y.y) / 2
+                let angle: CGFloat = .pi * 2 / 6
+                for i in 0..<6 {
+                    let xVal = centerX + radius * cos(angle * CGFloat(i))
+                    let yVal = centerY + radius * sin(angle * CGFloat(i))
+                    let point = CGPoint(x: xVal, y: yVal)
+                    if i == 0 {
+                        path.move(to: point)
+                    } else {
+                        path.addLine(to: point)
+                    }
+                }
+                path.close()
+            }
+
+            colorMap.getColor(color).set()
+
+            path.fill()
         }
-        
-        if shapeType == .triangle {
-            path.move(to: CGPoint(x: (x.x + y.x) / 2, y: y.y))
-            path.addLine(to: CGPoint(x: x.x, y: x.y))
-            path.addLine(to: CGPoint(x: y.x, y: x.y))
-            path.close()
-        }
-        
-        colorMap.getColor(color).set()
-        
-        // fill the path
-        path.fill()
-    }
 
     private func drawRect(x: CGPoint, y: CGPoint, color: Int) {
 
