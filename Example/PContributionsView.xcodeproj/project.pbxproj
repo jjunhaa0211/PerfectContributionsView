@@ -46,7 +46,7 @@
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		757DF585F4DC84F1FD0DFEB9 /* Pods-PContributionsView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PContributionsView_Tests.debug.xcconfig"; path = "Target Support Files/Pods-PContributionsView_Tests/Pods-PContributionsView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		75A96A548970056BEC23F618 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		B51E0838F73D24B6BF66E4AF /* PContributionsView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = PContributionsView.podspec; path = ../PContributionsView.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		B51E0838F73D24B6BF66E4AF /* PContributionsView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = PContributionsView.podspec; path = ../PContributionsView.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */

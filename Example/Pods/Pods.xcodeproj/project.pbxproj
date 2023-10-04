@@ -68,7 +68,7 @@
 		E7F2BA1E3C55AEE5003CEF1D1C6A95DD /* Pods-PContributionsView_Tests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-PContributionsView_Tests"; path = Pods_PContributionsView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8AF15121A1B5130D3BC6421058F1F91 /* Pods-PContributionsView_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PContributionsView_Example-dummy.m"; sourceTree = "<group>"; };
 		EA8313382E423EE6B2A0E047413C0AB0 /* Pods-PContributionsView_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PContributionsView_Tests-Info.plist"; sourceTree = "<group>"; };
-		F0A648251457109F74AB4B56C3970C35 /* PContributionsView.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = PContributionsView.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		F0A648251457109F74AB4B56C3970C35 /* PContributionsView.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = PContributionsView.podspec; sourceTree = "<group>"; tabWidth = 2; };
 		FF848E9FB281AD1F4F0472098B0D1D8C /* Pods-PContributionsView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PContributionsView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
