@@ -221,27 +221,18 @@ open class PContributionsView: UIView {
             path.addLine(to: CGPoint(x: x.x, y: x.y))
             path.close()
         case .triangle:
-            let angle: CGFloat = .pi / 10
+            let radius: CGFloat = CGFloat(rectWidth) / 2
+            let centerX: CGFloat = (x.x + y.x) / 2
+            let centerY: CGFloat = (x.y + y.y) / 2
             
-            var shouldMove: Bool = true
-            var currentPoint = CGPoint.zero
-            
-            for i in 0..<10 {
-                let radius = (i % 2 == 0) ? cornerRadius : cornerRadius / 2
-                let xVal = (radius * cos(angle * CGFloat(i))) + (x.x + y.x) / 2
-                let yVal = (radius * sin(angle * CGFloat(i))) + (x.y + y.y) / 2
-                let point = CGPoint(x: xVal, y: yVal)
-                
-                if shouldMove {
-                    path.move(to: point)
-                    currentPoint = point
-                    shouldMove = false
-                } else {
-                    path.addLine(to: point)
-                }
-                
-                currentPoint = point
-            }
+            let point1 = CGPoint(x: centerX, y: centerY - radius)
+            let point2 = CGPoint(x: centerX - radius * cos(.pi / 6), y: centerY + radius * sin(.pi / 6))
+            let point3 = CGPoint(x: centerX + radius * cos(.pi / 6), y: centerY + radius * sin(.pi / 6))
+
+            path.move(to: point1)
+            path.addLine(to: point2)
+            path.addLine(to: point3)
+            path.close()
             
         case .pentagon: // 5각형 그리기
             let radius: CGFloat = CGFloat(rectWidth / 2)
